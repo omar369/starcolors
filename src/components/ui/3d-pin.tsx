@@ -7,7 +7,6 @@ import Image from "next/image";
 
 export const PinContainer = ({
 	children,
-	title,
 	href,
 	className,
 	containerClassName,
@@ -57,18 +56,12 @@ export const PinContainer = ({
 					</div>
 				</div>
 			</div>
-			<PinPerspective title={title} href={href} />
+			<PinPerspective/> 
 		</Link>
 	);
 };
 
-export const PinPerspective = ({
-	title,
-	href,
-}: {
-	title?: string;
-	href?: string;
-}) => {
+export const PinPerspective = () => {
 	return (
 		<motion.div className="pointer-events-none  w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
 			<div className=" w-full h-full -mt-7 flex-none  inset-0">
