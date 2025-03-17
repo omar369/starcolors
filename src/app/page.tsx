@@ -1,6 +1,5 @@
 import BillboardSlider from '@/components/billboard-slider'
-import { CardSpotlightHome } from '@/components/homepage/CardSpotlightHome'
-import { AnimatedPinDemo } from '@/components/PinTest'
+// import { AnimatedPinDemo } from '@/components/PinTest'
 import AboutHome from '@/components/homepage/AboutHome'
 import Beneficios from '@/components/homepage/Beneficios'
 import ProductosHome from '@/components/homepage/ProductosHome'
@@ -21,7 +20,6 @@ export default function Home() {
 			<Subscribe/>
 			<Testimonios/>
 			{/* -COMPONENTES HECHOS
-			<CardSpotlightHome />
 			<AnimatedPinDemo />
 			 */}
 			<div>footer</div>
