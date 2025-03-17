@@ -1,8 +1,7 @@
-import React from 'react'
+import { InfinitsCards } from "./InfiniteCards";
 
 export default function Marcas() {
   return (
-    <div>Marcas</div>
-  )
+        <InfinitsCards />
+  );
 }
-
