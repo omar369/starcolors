@@ -1,14 +1,29 @@
 import BillboardSlider from '@/components/billboard-slider'
-import { Navbar } from '@/components/navbar'
+import { CardSpotlightHome } from '@/components/homepage/CardSpotlightHome'
 import { AnimatedPinDemo } from '@/components/PinTest'
+import AboutHome from '@/components/homepage/AboutHome'
+import Beneficios from '@/components/homepage/Beneficios'
+import ProductosHome from '@/components/homepage/ProductosHome'
+import { Testimonios } from '@/components/homepage/Testimonios'
+import Subscribe from '@/components/homepage/Subscribe'
+import BlogHome from '@/components/homepage/BlogHome'
+import Marcas from '@/components/homepage/Marcas'
 
 export default function Home() {
 	return (
 	<div>
-			<Navbar />
 			<BillboardSlider/>
+			<Beneficios />
+			<AboutHome />
+			<Marcas />
+			<ProductosHome />
+			<BlogHome/>
+			<Subscribe/>
+			<Testimonios/>
+			{/* -COMPONENTES HECHOS
+			<CardSpotlightHome />
 			<AnimatedPinDemo />
-			<div>content</div>
+			 */}
 			<div>footer</div>
 		</div>
 	)

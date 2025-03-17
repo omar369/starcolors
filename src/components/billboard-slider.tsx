@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import {useGSAP} from '@gsap/react'
+import { useGSAP } from "@gsap/react";
 
 interface SlideData {
 	title: string;
@@ -136,24 +136,24 @@ export default function BillboardSlider() {
 			ease: "power2.out",
 		});
 	};
-
 	return (
 		<div className="relative w-screen h-180 bg-gray-900 overflow-hidden text-white">
+			{/* 
+      En mobile el contenedor ocupa el 100% y en md se usa un ancho calculado.
+      Aquí, para 5 slides, se usa: calc(33% * 5) = 165% aproximadamente.
+    */}
 			<div
 				ref={carouselRef}
-				className="flex h-full items-center"
-				style={{ width: `${slides.length * 33}%` }}
+				className="flex h-full items-center w-[calc(100%*5)] md:w-[calc(33%*5)]"
 			>
 				{slides.map((slide, idx) => {
-					// Aquí consideramos activo siempre el primer slide (índice 0),
-					// ya que la lógica de reordenamiento lo mantiene en esa posición.
-					const isActive = idx === 1;
+					// Se sigue usando la lógica de activo según idx (ajusta si es necesario)
 					return (
 						<div
 							key={idx}
-							ref={idx === 1 ? slideRef : null} // Solo el slide activo se referencia
-							className={`w-1/5 px-8 flex-shrink-0 relative flex justify-center items-center transition-all duration-300 ${isActive ? "scale-105 opacity-100" : "scale-90 opacity-50"
-								}`}
+							ref={idx === 1 ? slideRef : null}
+							// En mobile cada tarjeta ocupa w-full; en md, w-1/5 (20% del contenedor)
+							className={'w-full md:w-1/5 px-8 relative flex items-center scale-100 opacity-80'}
 						>
 							<div className="relative w-full h-120">
 								<Image
@@ -164,8 +164,7 @@ export default function BillboardSlider() {
 									priority={idx === 1}
 								/>
 							</div>
-							<div className="inset-0 bg-black bg-opacity-30" />
-							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center ">
 								<h2 className="text-3xl md:text-5xl font-bold mb-4">
 									{slide.title}
 								</h2>
@@ -177,7 +176,7 @@ export default function BillboardSlider() {
 					);
 				})}
 			</div>
-
+			{/* Controles */}
 			<div className="absolute bottom-6 left-0 w-full px-8 flex items-center justify-between">
 				<div className="flex items-center space-x-8">
 					<span className="text-sm">
